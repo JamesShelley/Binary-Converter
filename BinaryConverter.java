@@ -15,17 +15,17 @@ public class BinaryConverter {
 		double decimalValue = input.nextInt();
 		
 		do {
-				if (decimalValue % 2 != 0) {
-				decimalValue = decimalValue / 2;
-				decimalValue = Math.floor(decimalValue);
-				binaryValues.add(binaryOne);
+			if (decimalValue % 2 != 0) {
+			decimalValue = decimalValue / 2;
+			decimalValue = Math.floor(decimalValue);
+			binaryValues.add(binaryOne);
 				
-				} else {
-				decimalValue = decimalValue / 2;
-				decimalValue = Math.floor(decimalValue);
-				binaryValues.add(binaryZero);
+			} else {
+			decimalValue = decimalValue / 2;
+			decimalValue = Math.floor(decimalValue);
+			binaryValues.add(binaryZero);
 				
-				}
+			}
 				
 		} while (decimalValue >= 1);
 		
