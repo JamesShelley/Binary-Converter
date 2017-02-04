@@ -7,8 +7,6 @@ public class BinaryConverter {
  public static void main(String[] args) {
 
   Scanner input = new Scanner(System.in);
-  String binaryOne = "1";
-  String binaryZero = "0";
   ArrayList < String > binaryValues = new ArrayList < String > ();
 
   try {
@@ -20,11 +18,11 @@ public class BinaryConverter {
    		
    		if (decimalValue % 2 != 0) {
    			decimalValue = decimalValue / 2;
-   			binaryValues.add(binaryOne);
+   			binaryValues.add("1");
 
    		} else {
    			decimalValue = decimalValue / 2;
-   			binaryValues.add(binaryZero);
+   			binaryValues.add("0");
 
    		}
 
