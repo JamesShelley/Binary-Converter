@@ -1,46 +1,55 @@
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class BinaryConverter {
 
-	public static void main(String[] args) {
+ public static void main(String[] args) {
 
-		Scanner input = new Scanner(System.in);
-		String binaryOne = "1";
-		String binaryZero = "0";
-		ArrayList<String> binaryValues = new ArrayList<String>();
-		
-		System.out.println("Please input a decimal number to convert to binary");
-		System.out.println("--------------");
-		double decimalValue = input.nextInt();
-		
-		do {
-			if (decimalValue % 2 != 0) {
-			decimalValue = decimalValue / 2;
-			decimalValue = Math.floor(decimalValue);
-			binaryValues.add(binaryOne);
-				
-			} else {
-			decimalValue = decimalValue / 2;
-			decimalValue = Math.floor(decimalValue);
-			binaryValues.add(binaryZero);
-				
-			}
-				
-		} while (decimalValue >= 1);
-		
-		System.out.println("--------------");
-		
-		StringBuilder sb = new StringBuilder();
+  Scanner input = new Scanner(System.in);
+  String binaryOne = "1";
+  String binaryZero = "0";
+  ArrayList < String > binaryValues = new ArrayList < String > ();
 
-		for (String s : binaryValues) {
-			sb.append(s);
-		}
-		String reverse = new StringBuffer(sb).reverse().toString();
-		System.out.println("Binary Value: " + reverse);
-	
-		input.close();
-		
-	}
-		
+  try {
+
+   System.out.println("Please input an integer to convert to binary:");
+   int decimalValue = input.nextInt();
+
+   	do {
+   		
+   		if (decimalValue % 2 != 0) {
+   			decimalValue = decimalValue / 2;
+   			binaryValues.add(binaryOne);
+
+   		} else {
+   			decimalValue = decimalValue / 2;
+   			binaryValues.add(binaryZero);
+
+   		}
+
+   	} while (decimalValue >= 1);
+
+   System.out.println("--------------");
+
+   StringBuilder sb = new StringBuilder();
+
+   for (String s: binaryValues) {
+	   sb.append(s);
+   }
+   
+   String reverse = new StringBuffer(sb).reverse().toString();
+   System.out.println("Binary Value: " + reverse);
+
+  } catch (InputMismatchException e) {
+   
+	  System.out.println("Invalid Input: Please input a positive integer.");
+	  System.out.println("----------------------------------------------");
+	  main(args);
+  }
+
+  input.close();
+
+ }
+
 }
